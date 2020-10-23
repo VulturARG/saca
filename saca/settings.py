@@ -25,7 +25,12 @@ SECRET_KEY = 'gcq_%2h5718q#6z*9lvvo$x3#6g-2_f4l2#vomq=(ri*f6)fpc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'aeroroca.com.ar',
+    'www.aeroroca.com.ar',
+    'localhost',
+    '127.0.0.1'
+    ]
 
 
 # Application definition
