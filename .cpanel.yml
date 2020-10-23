@@ -1,5 +1,5 @@
 ---
     deployment:
       tasks:
-        - export DEPLOYPATH=/home/luisbrio/public_html/
+        - export DEPLOYPATH=/home/luisbrio/public_html/saca
         - /bin/cp -R * $DEPLOYPATH
