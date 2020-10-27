@@ -81,7 +81,7 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'saca',
+        'NAME': 'luisbrio_saca',
         'USER': 'saca',
         'PASSWORD': 'vario374metro',
         'HOST': 'localhost',

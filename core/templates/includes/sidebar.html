@@ -63,15 +63,83 @@
             </div>
           </li>
           <li class="nav-item nav-category">
-            <span class="nav-link">Navigación</span>
+            <span class="nav-link">Navegación</span>
           </li>
           <li class="nav-item menu-items {% if 'index' in segment %} active {% endif %}">
             <a class="nav-link" href="/">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title">Home</span>
             </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+              </span>
+              <span class="menu-title">Información</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item menu-items">
+                  <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                    <span class="menu-icon">
+                      <i class="mdi mdi-table-large"></i>
+                    </span>
+                    <span class="menu-title">Información</span>
+                    <i class="menu-arrow"></i>
+                  </a>
+                  <div class="collapse" id="auth">
+                    <ul class="nav flex-column sub-menu">
+                      <li class="nav-item"> <a class="nav-link" href="/page-blank.html"> Vuelos </a></li>
+                      <li class="nav-item"> <a class="nav-link" href="/page-404.html"> Ranquing </a></li>
+                      <li class="nav-item"> <a class="nav-link" href="/page-500.html"> Cuenta </a></li>
+                      <li class="nav-item"> <a class="nav-link" href="/page-login.html"> Datos Personales </a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item"> <a class="nav-link" href="/page-blank.html"> Vuelos </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/page-404.html"> Ranquing </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/page-500.html"> Cuenta </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/page-login.html"> Datos Personales </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+              </span>
+              <span class="menu-title">Estadísticas</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <i class="fa fa-paper-plane"></i> <a class="nav-link" href="/page-blank.html"> Vuelos </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/page-404.html"> Ranquing </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/page-500.html"> Cuenta </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/page-login.html"> Datos Personales </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <span class="menu-icon">
+                <i class="mdi mdi-laptop"></i>
+              </span>
+              <span class="menu-title">Administración</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <i class="fa fa-paper-plane"></i> <a class="nav-link" href="/page-blank.html"> Vuelos </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/page-404.html"> Ranquing </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/page-500.html"> Cuenta </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/page-login.html"> Datos Personales </a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
@@ -138,16 +206,6 @@
                 <li class="nav-item"> <a class="nav-link" href="/page-register.html"> Register </a></li>
               </ul>
             </div>
-          </li>
-          <li class="nav-item menu-items active">
-            <a class="nav-link" 
-               target="_blank" rel="noreferrer noopener"
-               href="https://appseed.us/admin-dashboards/django-dashboard-corona-dark-pro">
-              <span class="menu-icon">
-                <i class="mdi mdi-file-document-box"></i>
-              </span>
-              <span class="menu-title">PRO Version</span>
-            </a>
           </li>
         </ul>
       </nav>
