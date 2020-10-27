@@ -1,24 +1,20 @@
-https://github.com/app-generator/django-dashboard-corona-dark
-
-# [Django Dashboard Corona Dark](https://appseed.us/admin-dashboards/django-dashboard-corona-dark)
+# [Django Dashboard Atlantis](https://appseed.us/admin-dashboards/django-dashboard-atlantis-dark)
 
 > **Open-Source Admin Dashboard** coded in **Django Framework** by **AppSeed** [Web App Generator](https://appseed.us/app-generator) - Features:
 
-- Sample UI Kit: **Corona Dark Dashboard** (Free Version) provided by **Bootstrapdash**
+- UI Kit: **Atlantis Lite** (Dark Version) provided by **ThemeKita**
 - UI-Ready app, SQLite Database, Django Native ORM
 - Modular design, clean code-base
 - Session-Based Authentication, Forms validation
 - Deployment scripts: Docker, Gunicorn / Nginx
-- **MIT License**
-- Free support via **Github** issues tracker
-- Paid 24/7 Live Support via [Discord](https://discord.gg/fZC6hup).
+- Support via **Github** (issues tracker) and [Discord](https://discord.gg/fZC6hup).
 
 > Links
 
-- [Django Dashboard Corona Dark](https://django-dashboard-corona-dark.appseed.us/) - LIVE Demo
-- [Django Dashboard Corona Dark](https://appseed.us/admin-dashboards/django-dashboard-corona-dark) - Official product page
-- More [Django Admin Dashboards](https://appseed.us/admin-dashboards/django) - index hosted by **[AppSeed](https://appseed.us)**
-- [Open-Source Admin Dashboards](https://appseed.us/admin-dashboards/open-source) - index hosted by **[AppSeed](https://appseed.us)**
+- [Django Dashboard Atlantis Dark](https://appseed.us/admin-dashboards/django-dashboard-atlantis-dark) - Product page
+- [Django Dashboard Atlantis Dark - Demo](https://django-dashboard-atlantis-dark.appseed.us/) - LIVE Deployment
+- [Django Dashboard Atlantis Dark - Docs](https://docs.appseed.us/admin-dashboards/django-dashboard-atlantis-dark/) - Product documentation
+- [Atlantis Lite - UI Documentation](https://atlantis-lite.appseed.us/)
 
 <br />
 
@@ -26,14 +22,16 @@ https://github.com/app-generator/django-dashboard-corona-dark
 
 PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Support** (via [Discord](https://discord.gg/fZC6hup))
 
-| [Django Dashboard Material PRO](https://appseed.us/admin-dashboards/django-dashboard-material-pro) | [Django Dashboard Black PRO](https://appseed.us/admin-dashboards/django-dashboard-black-pro) | [Django Dashboard Argon PRO](https://appseed.us/admin-dashboards/django-dashboard-argon-pro) |
+| [Django AtlantisDark PRO](https://appseed.us/admin-dashboards/django-dashboard-atlantis-dark-pro) | [Django Dashboard Black PRO](https://appseed.us/admin-dashboards/django-dashboard-black-pro) | [Django Dashboard Argon PRO](https://appseed.us/admin-dashboards/django-dashboard-argon-pro) |
 | --- | --- | --- |
-| [![Django Dashboard Material PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-material-pro/master/media/django-dashboard-material-pro-screen.png)](https://appseed.us/admin-dashboards/django-dashboard-material-pro) | [![Django Dashboard Black PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-black-pro/master/media/django-dashboard-black-pro-screen.png)](https://appseed.us/admin-dashboards/django-dashboard-black-pro) | [![Django Dashboard Argon PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-argon-pro/master/media/django-dashboard-argon-pro-screen.png)](https://appseed.us/admin-dashboards/django-dashboard-argon-pro)
+| [![Django AtlantisDark PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-atlantis-dark-pro/master/media/django-dashboard-atlantis-dark-pro-screen.png)](https://appseed.us/admin-dashboards/django-dashboard-atlantis-dark-pro) | [![Django Dashboard Black PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-black-pro/master/media/django-dashboard-black-pro-screen.png)](https://appseed.us/admin-dashboards/django-dashboard-black-pro) | [![Django Dashboard Argon PRO]https://github.com/app-generator/django-dashboard-atlantis-dark
+
+(https://raw.githubusercontent.com/app-generator/django-dashboard-argon-pro/master/media/django-dashboard-argon-pro-screen.png)](https://appseed.us/admin-dashboards/django-dashboard-argon-pro)
 
 <br />
 <br />
 
-![Django Dashboard Corona Dark - Open-Source template project provided by AppSeed.](https://raw.githubusercontent.com/app-generator/django-dashboard-corona-dark/master/media/django-dashboard-corona-dark-screen.png)
+![Django Dashboard Atlantis - Template project provided by AppSeed.](https://raw.githubusercontent.com/app-generator/django-dashboard-atlantis/master/media/django-dashboard-atlantis-screen.png)
 
 <br />
 
@@ -41,8 +39,8 @@ PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Suppo
 
 ```bash
 $ # Get the code
-$ git clone https://github.com/app-generator/django-dashboard-corona-dark.git
-$ cd django-dashboard-corona-dark
+$ git clone https://github.com/app-generator/django-dashboard-atlantis-dark.git
+$ cd django-dashboard-atlantis-dark
 $
 $ # Virtualenv modules installation (Unix based systems)
 $ virtualenv env
@@ -150,8 +148,8 @@ The application can be easily executed in a docker container. The steps:
 > Get the code
 
 ```bash
-$ git clone https://github.com/app-generator/django-dashboard-corona-dark.git
-$ cd django-dashboard-corona-dark
+$ git clone https://github.com/app-generator/django-dashboard-atlantis-dark.git
+$ cd django-dashboard-atlantis-dark
 ```
 
 > Start the app in Docker
@@ -209,11 +207,11 @@ Visit `http://localhost:8001` in your browser. The app should be up & running.
 
 ## Credits & Links
 
-- [Django](https://www.djangoproject.com/) - The offcial website
+- [Django](https://www.djangoproject.com/) - The official website
 - [Boilerplate Code](https://appseed.us/boilerplate-code) - Index provided by **AppSeed**
 - [Boilerplate Code](https://github.com/app-generator/boilerplate-code) - Index published on Github
 
 <br />
 
 ---
-[Django Dashboard Corona Dark](https://appseed.us/admin-dashboards/django-dashboard-corona-dark) - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
+[Django Dashboard Atlantis](https://appseed.us/admin-dashboards/django-dashboard-atlantis-dark) - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
