@@ -1,16 +1,4 @@
-################################################################################
-#                             Made by Luis Briones
-################################################################################
-
-# -*- encoding: utf-8 -*-
-"""
-MIT License
-Copyright (c) 2019 - present AppSeed.us
-"""
-
 from django.db import models
-from django.contrib.auth.models import User, Group
-from django.core.validators import RegexValidator
 
 # Create your models here.
 
@@ -18,7 +6,7 @@ class Province(models.Model):
     name = models.CharField(max_length=60)
     
     class meta:
-        verbose_name = "Provincia"
+        verbose_name        = "Provincia"
         verbose_name_plural = "Provincia"
     
     def __str__(self):
@@ -26,15 +14,15 @@ class Province(models.Model):
     
     
 class City(models.Model):
-    name = models.CharField(max_length=60)
-    zip_code = models.CharField(max_length=10)
-    province = models.ForeignKey(Province,on_delete=models.CASCADE)
-    latitude = models.DecimalField(verbose_name='Latitud', name=None, max_digits=12, decimal_places=8, null=True)
+    name      = models.CharField(max_length=60)
+    zip_code  = models.CharField(max_length=10)
+    province  = models.ForeignKey(Province,on_delete=models.CASCADE)
+    latitude  = models.DecimalField(verbose_name='Latitud', name=None, max_digits=12, decimal_places=8, null=True)
     longitude = models.DecimalField(verbose_name='Longitud', name=None, max_digits=12, decimal_places=8)
     time_zone = models.IntegerField(blank=True, null=True)
     
     class meta:
-        verbose_name = "Ciudad"
+        verbose_name        = "Ciudad"
         verbose_name_plural = "Ciudades"
         
     def __str__(self):
@@ -42,192 +30,58 @@ class City(models.Model):
 
 
 class Airport(models.Model):
-    name = models.CharField(max_length=60)
-    icao = models.CharField(max_length=5)
-    latitude = models.DecimalField(verbose_name='Latitud', name=None, max_digits=12, decimal_places=8)
-    longitude = models.DecimalField(verbose_name='Longitud', name=None, max_digits=12, decimal_places=8)
+    name           = models.CharField(max_length=60)
+    icao           = models.CharField(max_length=5)
+    latitude       = models.DecimalField(verbose_name='Latitud', name=None, max_digits=12, decimal_places=8)
+    longitude      = models.DecimalField(verbose_name='Longitud', name=None, max_digits=12, decimal_places=8)
     altitude_feets = models.IntegerField()
-    time_zone = models.IntegerField(blank=True, null=True)
+    time_zone      = models.IntegerField(blank=True, null=True)
     
     class meta:
-        verbose_name = "Aeropuerto"
+        verbose_name        = "Aeropuerto"
         verbose_name_plural = "Aeropuertos"
     
     def __str__(self):
         return f'{self.name}'    
 
 
-class Club(models.Model):
-    name = models.CharField(max_length=60)
-    address = models.CharField(max_length=60, blank=True, null=True)
-    city = models.ForeignKey(City,on_delete=models.SET_NULL, blank=True, null=True)
-    airport = models.ForeignKey(Airport,on_delete=models.CASCADE, blank=True, null=True)
-    fee = models.DecimalField(verbose_name='Cuota', name=None, max_digits=12, decimal_places=2)
-    balance_close_month = models.CharField(max_length=10)
-    payment_message = models.TextField(blank=True, null=True)
-    cuit = models.CharField(max_length=17, blank=True, null=True)
-    category_IVA = models.CharField(max_length=25, blank=True, null=True)
-    name_logo = models.CharField(max_length=25, blank=True, null=True)
-    active = models.BooleanField(default=True)
-    season_date = models.CharField(max_length=10, blank=True, null=True)
+class CategoryIVA(models.Model):
+    category_IVA = models.CharField(max_length=30)
+    
+    class meta:
+        verbose_name        = "Categoría IVA"
+        verbose_name_plural = "Categorías IVA"
+    
+    def __str__(self):
+        return f'{self.category_IVA}'
+
+
+class ClubType(models.Model):
     type = models.CharField(max_length=20)
     
+    class meta:
+        verbose_name        = "Tipo Club"
+        verbose_name_plural = "Tipos de Clubs"
+    
+    def __str__(self):
+        return f'{self.type}'
+    
+
+class Club(models.Model):
+    name                = models.CharField(max_length=60)
+    address             = models.CharField(max_length=60, blank=True, null=True)
+    city                = models.ForeignKey(City,on_delete=models.SET_NULL, blank=True, null=True)
+    airport             = models.ForeignKey(Airport,on_delete=models.CASCADE, blank=True, null=True)
+    fee                 = models.DecimalField(verbose_name='Cuota', name=None, max_digits=12, decimal_places=2)
+    balance_close_month = models.CharField(max_length=10)
+    payment_message     = models.TextField(blank=True, null=True)
+    cuit                = models.CharField(max_length=17, blank=True, null=True)
+    category_IVA        = models.ForeignKey(CategoryIVA,on_delete=models.CASCADE, blank=True, null=True)
+    name_logo           = models.CharField(max_length=25, blank=True, null=True)
+    active              = models.BooleanField(default=True)
+    season_date         = models.CharField(max_length=10, blank=True, null=True)
+    type                = models.ForeignKey(ClubType,on_delete=models.CASCADE, blank=True, null=True)
     
     def __str__(self):
         return f'{self.name}'
 
-
-class Person(models.Model):
-    name = models.CharField('Nombre',max_length=60, blank=True, null=True)
-    last_name = models.CharField(max_length=60)
-    document_type = models.CharField(max_length=15, blank=True, null=True)
-    document_number = models.CharField(max_length=15, blank=True, null=True)
-    address = models.CharField(max_length=60, blank=True, null=True)
-    city = models.ForeignKey(City,on_delete=models.SET_NULL, blank=True, null=True,verbose_name="Ciudad")
-    province = models.ForeignKey(Province,on_delete=models.SET_NULL, blank=True, null=True)
-    birthday = models.DateField(blank=True, null=True)
-    birthday_place = models.CharField(max_length=60, blank=True, null=True)
-    citizenship = models.CharField(max_length=20, blank=True, null=True)
-    job = models.CharField(max_length=60, blank=True, null=True)
-    email = models.EmailField(blank=True, null=True)
-    cuit = models.CharField(max_length=17, blank=True, null=True)
-    categoryIVA = models.CharField(max_length=25, blank=True, null=True)
-    
-    class meta:
-        verbose_name = "Persona"
-        verbose_name_plural = "Personas"
-    
-    def __str__(self):
-        return f'{self.last_name}, {self.name}'
-
-
-class Pilot(models.Model):
-    person = models.OneToOneField(Person,on_delete=models.CASCADE)
-    file_number = models.CharField(max_length=10, blank=True, null=True)
-    aircraft_license_type = models.CharField(max_length=15, blank=True, null=True)
-    aircraft_license_number = models.CharField(max_length=15, blank=True, null=True)
-    instructor_aircraft_license_number = models.CharField(max_length=15, blank=True, null=True)
-    glider_license_type = models.CharField(max_length=15, blank=True, null=True)
-    glider_license_number = models.CharField(max_length=15, blank=True, null=True)
-    instructor_glider_license_number = models.CharField(max_length=15, blank=True, null=True)
-    is_VFR = models.BooleanField(default=True, blank=True, null=True)
-    is_IFR = models.BooleanField(default=False, blank=True, null=True)
-    night_habilitation = models.BooleanField(default=False, blank=True, null=True)
-    is_single_engine = models.BooleanField(default=True, blank=True, null=True)
-    is_multi_engine = models.BooleanField(default=False, blank=True, null=True)
-    is_tug = models.BooleanField(default=False, blank=True, null=True)
-    is_turboprop = models.BooleanField(default=False, blank=True, null=True)
-    psychophysical_until = models.DateField(blank=True, null=True)
-    
-    class meta:
-        verbose_name = "Piloto"
-        verbose_name_plural = "Pilotos"
-    
-    def __str__(self):
-        return f'{self.file_number}'
-
-
-class ActivePilot(models.Model):
-    pilot = models.ForeignKey(Pilot,on_delete=models.CASCADE)
-    club = models.ForeignKey(Club,on_delete=models.CASCADE)
-    
-    class meta:
-        verbose_name = "Piloto Activo"
-        verbose_name_plural = "Pilotos Activos"
-    
-    def __str__(self):
-        return f'{self.pilot} {self.club}'
-    
-  
-class PartnerType(models.Model):
-    type = models.CharField(max_length=25, blank=True, null=True)
-    
-    class meta:
-        verbose_name = "Tipo Socio"
-        verbose_name_plural = "Tipo Socios"
-    
-    def __str__(self):
-        return f'{self.partner}'
-
-
-class Partner(models.Model):
-    number = models.IntegerField(blank=True, null=True)
-    person = models.ForeignKey(Person,on_delete=models.CASCADE)
-    pilot = models.ForeignKey(Pilot,on_delete=models.SET_NULL, blank=True, null=True)
-    date_admission = models.DateField(blank=True, null=True)
-    act_number = models.IntegerField(blank=True, null=True)
-    type = models.ForeignKey(PartnerType,on_delete=models.SET_NULL, blank=True, null=True)
-    club = models.ForeignKey(Club,on_delete=models.CASCADE)
-    presenter_1 = models.CharField(max_length=10, blank=True, null=True)
-    presenter_2 = models.CharField(max_length=10, blank=True, null=True)
-    user = models.ForeignKey(User,on_delete=models.SET_NULL, blank=True, null=True)
-    group = models.ForeignKey(Group,on_delete=models.SET_NULL, blank=True, null=True)
-    
-    class meta:
-        verbose_name = "Socio"
-        verbose_name_plural = "Socios"
-    
-    def __str__(self):
-        return f'{self.number}'
-
-
-class Leave(models.Model):
-    partner = models.OneToOneField(Partner,on_delete=models.CASCADE)
-    date = models.DateField(blank=True, null=True)
-    act_number = models.IntegerField(blank=True, null=True)
-    reason = models.CharField(max_length=25, blank=True, null=True)
-
-    class meta:
-        verbose_name = "Baja"
-        verbose_name_plural = "Bajas"
-    
-    def __str__(self):
-        return f'{self.partner}'
-
-
-class Phone(models.Model):
-    person = models.ForeignKey(Person,on_delete=models.CASCADE)
-    type = models.CharField(max_length=20, blank=True, null=True)
-    phone_number = models.CharField(max_length=20)
-    
-    class meta:
-        verbose_name = "Teléfono"
-        verbose_name_plural = "Teléfonos"
-    
-    def __str__(self):
-        return f'{self.phone_number}'
-
-
-################################################################################
-#                             Made by Luis Briones
-################################################################################
-    
-'''
-class PhoneField(MultiValueField):
-    def __init__(self, **kwargs):
-        # Define one message for all fields.
-        error_messages = {
-            'incomplete': 'Enter a country calling code and a phone number.',
-        }
-        # Or define a different message for each field.
-        fields = (
-            CharField(
-                error_messages={'incomplete': 'Enter a country calling code.'},
-                validators=[
-                    RegexValidator(r'^[0-9]+$', 'Enter a valid country calling code.'),
-                ],
-            ),
-            CharField(
-                error_messages={'incomplete': 'Enter a phone number.'},
-                validators=[RegexValidator(r'^[0-9]+$', 'Enter a valid phone number.')],
-            ),
-            CharField(
-                validators=[RegexValidator(r'^[0-9]+$', 'Enter a valid extension.')],
-                required=False,
-            ),
-        )
-        super().__init__(
-            error_messages=error_messages, fields=fields,
-            require_all_fields=False, **kwargs
-        )
-'''

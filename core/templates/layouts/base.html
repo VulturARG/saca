@@ -4,7 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 	<title>
-        Django Atlantis Dark - {% block title %}{% endblock %} | AppSeed
+        S.A.C.A. - {% block title %}{% endblock %} | AppSeed
     </title>
 
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
@@ -52,7 +52,7 @@
 		{% if request.user.is_authenticated %}
 
 			<!-- Custom template | don't include it in your project! -->
-			{% include 'includes/configuration-plugin.html' %}
+			{% comment %} {% include 'includes/configuration-plugin.html' %} {% endcomment %}
 
 		{% endif %}
 		
