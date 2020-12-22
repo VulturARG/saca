@@ -9,7 +9,7 @@ from .models import Partner
 # Create your views here.
 
 def partner_list(request):
-    contex = {'partner_list':Partner.objects.all()}
+    contex = {'partner_list':Partner.objects.filter(club = 2) }
     return render(request,"partner/partner_list.html",contex)
 
 def partner_form(request):

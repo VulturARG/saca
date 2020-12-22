@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',  # Enable the inner app 
-    'crispy_forms',
+    #'crispy_forms',
     'operation',
     'secretary',
     'treasury',
@@ -87,7 +87,7 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'luisbrio_saca',
+        'NAME': 'luisbrio_saca_test',
         'USER': 'saca',
         'PASSWORD': 'vario374metro',
         'HOST': 'localhost',

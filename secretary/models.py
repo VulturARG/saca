@@ -3,9 +3,10 @@
 ################################################################################
 
 from django.db import models
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import Group
 from django.core.validators import RegexValidator
 from app.models import Club, City, Province
+from django.conf import settings
 
 # Create your models here.
 
@@ -92,7 +93,7 @@ class Partner(models.Model):
     club           = models.ForeignKey(Club,on_delete=models.CASCADE)
     presenter_1    = models.CharField(max_length=10, blank=True, null=True)
     presenter_2    = models.CharField(max_length=10, blank=True, null=True)
-    user           = models.ForeignKey(User,on_delete=models.SET_NULL, blank=True, null=True)
+    user           = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.SET_NULL, blank=True, null=True)
     group          = models.ForeignKey(Group,on_delete=models.SET_NULL, blank=True, null=True)
     
     class meta:

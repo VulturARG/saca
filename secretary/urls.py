@@ -7,7 +7,7 @@ from . import views
 
 urlpatterns = [
 
-    path('', views.partner_list, name='list'),
+    #path('', views.partner_list, name='list'),
     path('form/', views.partner_form, name='form'),    
 
 ]
